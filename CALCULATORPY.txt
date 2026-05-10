@@ -1,0 +1,30 @@
+while True:
+    class OperationError(Exception):
+        pass
+
+    try:
+        a, b = map(float, input("Enter two numbers: ").split())
+        op = input("Enter operation (+, -, /, *): ")
+        
+        if op not in ["+", "-", "/", "*"]:
+            raise OperationError("enter correct operation! ")
+    
+    except ValueError:
+        print("print two valid numbers! ")
+
+    else:
+        if op == "+" :
+            print(a + b)
+            break
+        elif op == "-" :
+            print(a - b)
+            break
+        elif op == "*" :
+            print(a * b)
+            break
+        elif op == "/" :
+            print(a / b)
+            break
+
+    finally:
+        print("Thank You! 😊 ")
